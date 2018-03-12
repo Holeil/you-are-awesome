@@ -37,12 +37,15 @@ const returnBackInSecond = () => {
 
 
 };
-const getDeepPropertiesCount = () => {
-
-
+const getDeepPropertiesCount = (array, count = 0) => {
+  for(let i in array) {
+    count++;
+    count += getDeepPropertiesCount(array[i]);
+  }
+  return count;
 };
 const createSerializedObject = () => {
-
+  return new Number();
 
 };
 const toBuffer = () => {
